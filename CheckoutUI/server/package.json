@@ -14,7 +14,6 @@
         "node": "16.x"
     },
     "scripts": {
-    "build":"npm install && rimraf ./build && tsc"
     "start": "node server.js"
   },
   "keywords": [],
