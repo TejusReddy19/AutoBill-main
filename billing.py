@@ -92,7 +92,7 @@ def find_weight():
                
 def post(label,price,final_rate,taken):
     global id
-    url = "https://autobill-main-apiiii.onrender.com/product"
+    url = "https://autobill-main-1.onrender.com"
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
     data_dict = {"id":id_product,"name":label,"price":price,"units":"units","taken":taken,"payable":final_rate}
@@ -127,25 +127,25 @@ def list_com(label,final_weight):
 def rate(final_weight,label,taken):
     print("Calculating rate")
     if label == a :
-         print("Calculating rate of",label)
-         final_rate_a = final_weight * 0.01  
-         price = 10     
-         post(label,price,final_rate_a,taken)
+        print("Calculating rate of",label)
+        final_rate_a = final_weight * 0.01  
+        price = 10     
+        post(label,price,final_rate_a,taken)
     elif label ==b :
-         print("Calculating rate of",label)
-         final_rate_b = final_weight * 0.02
-         price = 20
-         post(label,price,final_rate_b,taken)
+        print("Calculating rate of",label)
+        final_rate_b = final_weight * 0.02
+        price = 20
+        post(label,price,final_rate_b,taken)
     elif label == l:
-         print("Calculating rate of",label)
-         final_rate_l = 1
-	 price = 1
-         post(label,price,final_rate_l,taken)
+        print("Calculating rate of",label)
+        final_rate_l = 1
+	    price = 1
+        post(label,price,final_rate_l,taken)
     else :
-         print("Calculating rate of",label)
-         final_rate_c = 2
-	 price = 2
-         post(label,price,final_rate_c,taken)
+        print("Calculating rate of",label)
+        final_rate_c = 2
+	    price = 2
+        post(label,price,final_rate_c,taken)
 def main(argv):
     global flag
     global final_weight
