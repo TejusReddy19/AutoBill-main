@@ -2,27 +2,22 @@ var InitialCount = -1;
 
 
 
-const deleteProducts = async() => {
-    url = 'https://autobill-main-1.onrender.com/';
+const deleteProducts = async () => {
+    url = 'https://autobill-opp.onrender.com/product';
 
+    // Fetch products again
     let res = await axios.get(url);
-    responseText = res.data;
-    const products = responseText;
+    const products = res.data;
 
+    // Delete each product
     for (let product of products) {
-        const response = await axios.delete(`https://autobill-main-1.onrender.com//${product.id}`)
-
+        await axios.delete(`https://autobill-opp.onrender.com/product/${product.id}`);
     }
-    location.reload();
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-}
+};
+
 
 const loadProducts = async() => {
-    url = 'https://autobill-main-1.onrender.com/';
+    url = 'https://autobill-opp.onrender.com/product';
 
     let res = await axios.get(url);
     responseText = await res.data;
@@ -79,7 +74,7 @@ const loadProducts = async() => {
 var checkout = async() => {
     document.getElementById('2').innerHTML = "<span class='loader-16' style='margin-left: 44%;'></span>"
     var payable = 0;
-    url = 'https://autobill-main-1.onrender.com/';
+    url = 'https://autobill-opp.onrender.com/product';
 
     let res = await axios.get(url);
     responseText = await res.data;

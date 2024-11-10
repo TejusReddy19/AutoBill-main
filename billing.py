@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import cv2
 import os
 import sys, getopt
@@ -146,6 +145,7 @@ def rate(final_weight,label,taken):
         final_rate_c = 2
 	    price = 2
         post(label,price,final_rate_c,taken)
+
 def main(argv):
     global flag
     global final_weight
@@ -157,6 +157,7 @@ def main(argv):
     except getopt.GetoptError:
         help()
         sys.exit(2)
+        
     for opt, arg in opts:
         if opt in ('-h', '--help'):
             help()
